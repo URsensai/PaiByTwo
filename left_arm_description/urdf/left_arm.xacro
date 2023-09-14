@@ -1,0 +1,192 @@
+<?xml version="1.0" ?>
+<robot name="left_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find left_arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find left_arm_description)/urdf/left_arm.trans" />
+<xacro:include filename="$(find left_arm_description)/urdf/left_arm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.02290775440148833 0.006539105343985077 0.008685384943102274" rpy="0 0 0"/>
+    <mass value="0.28416481806119953"/>
+    <inertia ixx="8e-05" iyy="5.8e-05" izz="4.7e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Motor20connector_u_1">
+  <inertial>
+    <origin xyz="-0.03631019797155113 -0.017212960401345286 -0.012552193899020072" rpy="0 0 0"/>
+    <mass value="0.018830430952545957"/>
+    <inertia ixx="1.1e-05" iyy="4e-06" izz="1.3e-05" ixy="-1e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.003203 -0.026824 -0.011384" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Motor20connector_u_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.003203 -0.026824 -0.011384" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Motor20connector_u_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Hindarm_1">
+  <inertial>
+    <origin xyz="-0.09719462433982218 0.02851065157935273 -0.0025305626709421847" rpy="0 0 0"/>
+    <mass value="0.1761222866304953"/>
+    <inertia ixx="0.000154" iyy="0.000457" izz="0.000483" ixy="1.5e-05" iyz="-0.0" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.023977 0.021706 0.001319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Hindarm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.023977 0.021706 0.001319" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Hindarm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Motor20_1">
+  <inertial>
+    <origin xyz="-0.010403314315509532 -0.012481126446424365 -0.0058413114169923236" rpy="0 0 0"/>
+    <mass value="0.28416451045523133"/>
+    <inertia ixx="4.7e-05" iyy="8e-05" izz="5.8e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.208277 -0.02179 0.001074" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Motor20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.208277 -0.02179 0.001074" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Motor20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Motor20connector_l_1">
+  <inertial>
+    <origin xyz="-0.015558387909464705 0.0003071884907786711 -0.018162478640281907" rpy="0 0 0"/>
+    <mass value="0.018830430952507915"/>
+    <inertia ixx="1.1e-05" iyy="1.3e-05" izz="4e-06" ixy="0.0" iyz="0.0" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.228656 -0.00824 -0.014353" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Motor20connector_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.228656 -0.00824 -0.014353" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Motor20connector_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Forearm_1">
+  <inertial>
+    <origin xyz="0.11129953363997974 0.01978427716656317 -0.0047584242271354596" rpy="0 0 0"/>
+    <mass value="0.17930247570309918"/>
+    <inertia ixx="0.000159" iyy="0.000471" izz="0.000459" ixy="7e-06" iyz="0.0" ixz="-2.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.433779 0.009567 0.004929" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Forearm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.433779 0.009567 0.004929" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Forearm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Camera_v1_1">
+  <inertial>
+    <origin xyz="-0.008234997454120874 0.00018084011869054853 -0.0016887204742087637" rpy="0 0 0"/>
+    <mass value="0.050050057182618145"/>
+    <inertia ixx="2.1e-05" iyy="4e-06" izz="2.2e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.380451 -0.011453 0.006846" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Camera_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.380451 -0.011453 0.006846" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://left_arm_description/meshes/Camera_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="-0.003203 0.026824 0.011384" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="Motor20connector_u_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 3" type="fixed">
+  <origin xyz="-0.020774 -0.04853 -0.012703" rpy="0 0 0"/>
+  <parent link="Motor20connector_u_1"/>
+  <child link="Hindarm_1"/>
+</joint>
+
+<joint name="Rigid 4" type="fixed">
+  <origin xyz="-0.1843 0.043496 0.000245" rpy="0 0 0"/>
+  <parent link="Hindarm_1"/>
+  <child link="Motor20_1"/>
+</joint>
+
+<joint name="Revolute 5" type="continuous">
+  <origin xyz="-0.020379 -0.01355 0.015427" rpy="0 0 0"/>
+  <parent link="Motor20_1"/>
+  <child link="Motor20connector_l_1"/>
+  <axis xyz="0.001328 0.0 0.999999"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="-0.205123 -0.017807 -0.019282" rpy="0 0 0"/>
+  <parent link="Motor20connector_l_1"/>
+  <child link="Forearm_1"/>
+</joint>
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="0.053328 0.02102 -0.001917" rpy="0 0 0"/>
+  <parent link="Forearm_1"/>
+  <child link="Camera_v1_1"/>
+</joint>
+
+</robot>
