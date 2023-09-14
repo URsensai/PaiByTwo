@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<robot name="torso" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find torso_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find torso_description)/urdf/torso.trans" />
+<xacro:include filename="$(find torso_description)/urdf/torso.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.01226388148365098 0.003301322690118828 -0.002221433187855119" rpy="0 0 0"/>
+    <mass value="1.1891882774494758"/>
+    <inertia ixx="0.000477" iyy="0.00084" izz="0.001032" ixy="5e-06" iyz="-1.1e-05" ixz="6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="80kg_connector_1">
+  <inertial>
+    <origin xyz="-0.00020098510982567448 -0.036001236457894936 0.030829496225321933" rpy="0 0 0"/>
+    <mass value="1.1217939086830222"/>
+    <inertia ixx="0.003468" iyy="0.000589" izz="0.003688" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.00612 -0.039553 -0.002351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/80kg_connector_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.00612 -0.039553 -0.002351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/80kg_connector_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="torso_1">
+  <inertial>
+    <origin xyz="-0.010012540711269748 -0.0005924359884935475 0.19030717289369228" rpy="0 0 0"/>
+    <mass value="1.6115340181448752"/>
+    <inertia ixx="0.030434" iyy="0.025694" izz="0.017855" ixy="-4e-06" iyz="9.9e-05" ixz="-4.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.004219 -0.003553 -0.040482" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/torso_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.004219 -0.003553 -0.040482" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/torso_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="neck_lid_1">
+  <inertial>
+    <origin xyz="0.047394792914612335 6.094687622602846e-07 0.002140581453534962" rpy="0 0 0"/>
+    <mass value="0.026014955223096565"/>
+    <inertia ixx="1.4e-05" iyy="1.9e-05" izz="3.3e-05" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.053938 -0.003962 -0.400311" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/neck_lid_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.053938 -0.003962 -0.400311" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://torso_description/meshes/neck_lid_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="-0.00612 0.039553 0.002351" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="80kg_connector_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="0.010339 -0.036 0.038131" rpy="0 0 0"/>
+  <parent link="80kg_connector_1"/>
+  <child link="torso_1"/>
+</joint>
+
+<joint name="Rigid 3" type="fixed">
+  <origin xyz="-0.058157 0.000409 0.359829" rpy="0 0 0"/>
+  <parent link="torso_1"/>
+  <child link="neck_lid_1"/>
+</joint>
+
+</robot>

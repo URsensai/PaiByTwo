@@ -1,0 +1,219 @@
+<?xml version="1.0" ?>
+<robot name="right_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find right_arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find right_arm_description)/urdf/right_arm.trans" />
+<xacro:include filename="$(find right_arm_description)/urdf/right_arm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.03715849973861051 -0.00020329062987886615 0.015366473055754261" rpy="0 0 0"/>
+    <mass value="0.28416481806119953"/>
+    <inertia ixx="8e-05" iyy="5.8e-05" izz="4.7e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="connector_u_1">
+  <inertial>
+    <origin xyz="-0.025339184270491446 -0.00997035637520933 -0.00917155225541377" rpy="0 0 0"/>
+    <mass value="0.018830430952545957"/>
+    <inertia ixx="1.2e-05" iyy="4e-06" izz="1.2e-05" ixy="-1e-06" iyz="-1e-06" ixz="-1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.024135 -0.013339 -0.003814" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/connector_u_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.024135 -0.013339 -0.003814" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/connector_u_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_hindarm_1">
+  <inertial>
+    <origin xyz="-0.06820099453208438 -0.02644661581406854 -0.06978866714291666" rpy="0 0 0"/>
+    <mass value="0.1770924654468453"/>
+    <inertia ixx="0.000315" iyy="0.000462" izz="0.000327" ixy="1.1e-05" iyz="1e-05" ixz="-0.000166"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.038228 -0.028052 -0.005362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/right_hindarm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.038228 -0.028052 -0.005362" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/right_hindarm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor20_1">
+  <inertial>
+    <origin xyz="-0.003158263165506048 -0.0124805305057418 0.003407910222114105" rpy="0 0 0"/>
+    <mass value="0.28416451045523133"/>
+    <inertia ixx="5.2e-05" iyy="8e-05" izz="5.3e-05" ixy="-0.0" iyz="0.0" ixz="-6e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.170565 -0.016556 0.122908" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/motor20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.170565 -0.016556 0.122908" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/motor20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="connector_l_1">
+  <inertial>
+    <origin xyz="0.0015039608596267295 0.0004767611886328702 -0.02386452425575708" rpy="0 0 0"/>
+    <mass value="0.018830430952545957"/>
+    <inertia ixx="9e-06" iyy="1.3e-05" izz="6e-06" ixy="0.0" iyz="0.0" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1957 -0.003006 0.111201" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/connector_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1957 -0.003006 0.111201" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/connector_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_forearm_1">
+  <inertial>
+    <origin xyz="-0.08616984285299548 -0.0045434895837697265 -0.04572970608236904" rpy="0 0 0"/>
+    <mass value="0.17930247570310415"/>
+    <inertia ixx="0.000329" iyy="0.00047" izz="0.00029" ixy="-1e-05" iyz="-1.1e-05" ixz="-0.00015"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.161249 -0.003006 0.146744" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/right_forearm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.161249 -0.003006 0.146744" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/right_forearm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sprayer_body_1">
+  <inertial>
+    <origin xyz="-0.02699898767586356 -0.00196922857037568 -0.026379058486548784" rpy="0 0 0"/>
+    <mass value="1.754105749905676"/>
+    <inertia ixx="0.001407" iyy="0.001427" izz="0.00144" ixy="2e-06" iyz="3e-06" ixz="8.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.290933 0.004332 0.230801" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/sprayer_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.290933 0.004332 0.230801" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/sprayer_body_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="sprayer_hose_1">
+  <inertial>
+    <origin xyz="-0.4722077974113481 0.011655732410039386 -0.1981444441768364" rpy="0 0 0"/>
+    <mass value="0.20957861514118575"/>
+    <inertia ixx="0.00018" iyy="0.000273" izz="0.000186" ixy="-6e-06" iyz="-6e-06" ixz="-9.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.073755 0.022854 0.135556" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/sprayer_hose_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.073755 0.022854 0.135556" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://right_arm_description/meshes/sprayer_hose_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="-0.024135 0.013339 0.003814" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="connector_u_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="-0.014093 0.014713 0.001548" rpy="0 0 0"/>
+  <parent link="connector_u_1"/>
+  <child link="right_hindarm_1"/>
+</joint>
+
+<joint name="Rigid 3" type="fixed">
+  <origin xyz="-0.132337 -0.011496 -0.12827" rpy="0 0 0"/>
+  <parent link="right_hindarm_1"/>
+  <child link="motor20_1"/>
+</joint>
+
+<joint name="Revolute 4" type="continuous">
+  <origin xyz="-0.025135 -0.01355 0.011707" rpy="0 0 0"/>
+  <parent link="motor20_1"/>
+  <child link="connector_l_1"/>
+  <axis xyz="-0.695986 0.0 0.718056"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="0.034451 0.0 -0.035543" rpy="0 0 0"/>
+  <parent link="connector_l_1"/>
+  <child link="right_forearm_1"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="-0.129684 -0.007338 -0.084057" rpy="0 0 0"/>
+  <parent link="right_forearm_1"/>
+  <child link="sprayer_body_1"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="0.364688 -0.018522 0.095245" rpy="0 0 0"/>
+  <parent link="sprayer_body_1"/>
+  <child link="sprayer_hose_1"/>
+</joint>
+
+</robot>

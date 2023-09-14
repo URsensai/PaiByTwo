@@ -1,0 +1,192 @@
+<?xml version="1.0" ?>
+<robot name="v3" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find v3_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find v3_description)/urdf/v3.trans" />
+<xacro:include filename="$(find v3_description)/urdf/v3.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.17909892481337406 0.09762976636632872 -0.22414750082071178" rpy="0 0 0"/>
+    <mass value="0.2923278922778424"/>
+    <inertia ixx="0.001682" iyy="0.000202" izz="0.001816" ixy="0.0" iyz="0.0" ixz="9e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_motor_1">
+  <inertial>
+    <origin xyz="-3.0853293208343846e-06 -0.0005645016256021207 -0.04017416319424169" rpy="0 0 0"/>
+    <mass value="0.5369241363306354"/>
+    <inertia ixx="0.000434" iyy="0.000311" izz="0.000222" ixy="-0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173089 -0.189835 0.216581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/right_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173089 -0.189835 0.216581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/right_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_motor_1">
+  <inertial>
+    <origin xyz="-3.0853293204458065e-06 -0.000564566738473324 -0.04017416319424108" rpy="0 0 0"/>
+    <mass value="0.5369241363306354"/>
+    <inertia ixx="0.000434" iyy="0.000311" izz="0.000222" ixy="-0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173089 -0.005373 0.216581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/left_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173089 -0.005373 0.216581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/left_motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_support_1">
+  <inertial>
+    <origin xyz="1.9185127553278392e-07 -0.030699947805546385 -0.023078069478630503" rpy="0 0 0"/>
+    <mass value="0.055292061964388156"/>
+    <inertia ixx="4.5e-05" iyy="1.2e-05" izz="4.2e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173089 -0.222335 0.276581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/left_support_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173089 -0.222335 0.276581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/left_support_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_support_1">
+  <inertial>
+    <origin xyz="2.9213367592484385e-05 -0.030700012918507838 -0.023078051230753238" rpy="0 0 0"/>
+    <mass value="0.055292061964388156"/>
+    <inertia ixx="4.5e-05" iyy="1.2e-05" izz="4.2e-05" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173089 -0.037873 0.276581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/right_support_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173089 -0.037873 0.276581" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/right_support_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_thigh_1">
+  <inertial>
+    <origin xyz="-0.0003807323150765429 -0.00025225945205693996 -0.10043314338718551" rpy="0 0 0"/>
+    <mass value="0.7308676180663332"/>
+    <inertia ixx="0.002702" iyy="0.002579" izz="0.001051" ixy="0.0" iyz="1e-06" ixz="6.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173133 -0.007173 0.311081" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/left_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173133 -0.007173 0.311081" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/left_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_thigh_1">
+  <inertial>
+    <origin xyz="-0.0005064348310377387 -0.0002522002577471094 -0.1004325910285071" rpy="0 0 0"/>
+    <mass value="0.730867618264309"/>
+    <inertia ixx="0.002702" iyy="0.002579" izz="0.001051" ixy="0.0" iyz="1e-06" ixz="5.9e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.173089 -0.191635 0.311081" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/right_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.173089 -0.191635 0.311081" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://v3_description/meshes/right_thigh_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 1" type="fixed">
+  <origin xyz="0.173089 0.189835 -0.216581" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_motor_1"/>
+</joint>
+
+<joint name="Rigid 2" type="fixed">
+  <origin xyz="0.173089 0.005373 -0.216581" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_motor_1"/>
+</joint>
+
+<joint name="Revolute 5" type="continuous">
+  <origin xyz="0.0 0.0325 -0.06" rpy="0 0 0"/>
+  <parent link="right_motor_1"/>
+  <child link="left_support_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 6" type="continuous">
+  <origin xyz="0.0 0.0325 -0.06" rpy="0 0 0"/>
+  <parent link="left_motor_1"/>
+  <child link="right_support_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 7" type="fixed">
+  <origin xyz="4.4e-05 -0.0307 -0.0345" rpy="0 0 0"/>
+  <parent link="right_support_1"/>
+  <child link="left_thigh_1"/>
+</joint>
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="0.0 -0.0307 -0.0345" rpy="0 0 0"/>
+  <parent link="left_support_1"/>
+  <child link="right_thigh_1"/>
+</joint>
+
+</robot>
